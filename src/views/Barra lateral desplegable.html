@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Para iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Para tipo de texto -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Para cards y elementos Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Sidebar con Iconos y Texto</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <li>
+          <a href="#">
+            <i class="bi bi-house-door"></i><span class="text">Inicio</span>
+          </a>
+        </li>
+      </ul>
+      <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+    </nav>
+    <!-- Navbar -->
+
+    <div class="container">
+      <!-- Barra lateral desplegable -->
+      <div
+        class="sidebar"
+        onmouseover="openSidebar()"
+        onmouseout="closeSidebar()"
+      >
+        <ul class="nav">
+          <li>
+            <i class="bi bi-whatsapp"></i><span class="text">Whatsapp</span>
+          </li>
+          <li>
+            <i class="bi bi-facebook"></i><span class="text">Facebook</span>
+          </li>
+          <li>
+            <i class="bi bi-instagram"></i><span class="text">Instagram</span>
+          </li>
+          <li>
+            <i class="bi bi-youtube"></i><span class="text">YouTube</span>
+          </li>
+          <li><i class="bi bi-amd"></i><span class="text">AMD</span></li>
+        </ul>
+      </div>
+      <!-- Barra lateral desplegable -->
+
+      <!-- Cards -->
+      <div class="content">
+        <div class="card-container">
+          <div class="card">
+            <img src="imagen1.jpg" alt="Imagen 1" />
+            <h3>Card 1</h3>
+            <p>Description for Card 1.</p>
+          </div>
+
+          <div class="card">
+            <img src="imagen2.jpg" alt="Imagen 2" />
+            <h3>Card 2</h3>
+            <p>Description for Card 2.</p>
+          </div>
+
+          <div class="card">
+            <img src="imagen3.jpg" alt="Imagen 3" />
+            <h3>Card 3</h3>
+            <p>Description for Card 3.</p>
+          </div>
+
+          <div class="card">
+            <img src="imagen4.jpg" alt="Imagen 4" />
+            <h3>Card 4</h3>
+            <p>Description for Card 4.</p>
+          </div>
+
+          <div class="card">
+            <img src="imagen4.jpg" alt="Imagen 4" />
+            <h3>Card 4</h3>
+            <p>Description for Card 5.</p>
+          </div>
+
+          <div class="card">
+            <img src="imagen4.jpg" alt="Imagen 4" />
+            <h3>Card 4</h3>
+            <p>Description for Card 6.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cards -->
+    </div>
+
+    <!-- Abrir y cerrar Sider -->
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("active");
+      }
+
+      function openSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.add("active");
+      }
+
+      function closeSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.remove("active");
+      }
+    </script>
+    <!-- Abrir y cerrar Sider -->
+  </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Roboto", sans-serif;
+    }
+
+    body {
+      display: flex;
+    }
+
+    .container {
+      display: flex;
+      height: 100%;
+    }
+
+    .sidebar {
+      width: 60px;
+      background-color: #333;
+      color: #fff;
+      overflow: hidden;
+      height: 100%;
+      transition: width 0.1s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .sidebar.active {
+      width: 200px;
+    }
+
+    .toggle-btn {
+      font-size: 24px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav {
+      list-style: none;
+      padding: 0;
+      margin-top: 60px; /* Asegura que el contenido no esté detrás del navbar */
+    }
+
+    .nav li {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .nav li i {
+      font-size: 20px;
+      margin-right: 15px;
+    }
+
+    .text {
+      display: none;
+    }
+
+    .sidebar.active .text {
+      display: inline;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .sidebar.active {
+      width: 200px;
+    }
+
+    /* Estilos para el navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #0077ff;
+      color: #fff;
+      align-items: center;
+      padding: 0 3px;
+      height: 50px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2; /* Asegura que el navbar esté por encima del sidebar */
+    }
+
+    .navbar .toggle-btn {
+      font-size: 24px;
+      background-color: #33333300;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .navbar-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 10px;
+      /* margin-left: 0px; Ajusta el margen izquierdo para evitar solapamientos con el sidebar */
+    }
+
+    .navbar-nav li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* Estilos para el sidebar */
+    .sidebar {
+      width: 50px;
+      background-color: #333;
+      color: #fff;
+      overflow: hidden;
+      height: 100%;
+      transition: width 0s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar.active {
+      width: 200px;
+    }
+
+    /* Estilos para el contenido principal */
+    .content {
+      flex: 1;
+      padding: 0px 0px 0px 30px;
+      margin-left: 20px; /* Añade un margen izquierdo para evitar que el sidebar lo tape */
+    }
+
+    .sidebar.active .navbar {
+      justify-content: flex-start;
+    }
+
+    .sidebar.active .navbar .text {
+      display: inline;
+    }
+
+    /* Estilos navbar */
+    .navbar-nav li {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+
+    .navbar-nav li a i {
+      font-size: 20px;
+      margin-right: 0;
+    }
+
+    /* Ajustar el contenido principal para evitar que quede detrás del navbar */
+    .content {
+      margin-top: 60px;
+    }
+
+    /* Estilos para cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+      ); /* Se ajusta automáticamente al ancho de la pantalla */
+      grid-gap: 20px;
+      margin-top: 5px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+    }
+
+    .card p {
+      color: #555;
+    }
+  </style>
+</html>
