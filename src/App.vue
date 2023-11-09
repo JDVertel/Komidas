@@ -24,64 +24,83 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+<div class="container">
 
- 
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
-<body>
-   
+    <body>
+
         <div class="sidebar" v-on:mouseover="openSidebar()" v-on:mouseout="closeSidebar()">
             <ul class="nav">
                 <li>
-                    <RouterLink to="/"> <i class="bi bi-whatsapp"></i><span class="text">Whatsapp</span></RouterLink> <br>
+                    <RouterLink to="/"><i class="bi bi-house"></i><span class="text">Home</span></RouterLink> <br>
+                </li>
+
+                <li>
+                    <RouterLink to="/productos"> <i class="bi bi-backpack-fill"></i><span class="text">Productos</span></RouterLink>
+                </li>
+                <!--  -->
+                <li>
+                    <RouterLink to="/mesas"> <i class="bi bi-person-rolodex"></i><span class="text">Mesas</span></RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/about"><i class="bi bi-facebook"></i><span class="text">Facebook</span></RouterLink> <br>
+                    <RouterLink to="/usuarios"> <i class="bi bi-people"></i><span class="text">Usuarios</span></RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/menu"> <i class="bi bi-instagram"></i><span class="text">Instagram</span></RouterLink>
+                    <RouterLink to="/ventasensitio"><i class="bi bi-bookmark-check-fill"></i><span class="text">Ventas en sitio</span></RouterLink>
                 </li>
                 <li>
-                    <i class="bi bi-youtube"></i><span class="text">YouTube</span>
+                    <RouterLink to="/domicilios"> <i class="bi bi-truck"></i><span class="text">Domicilios</span></RouterLink>
                 </li>
-                <li><i class="bi bi-amd"></i><span class="text">AMD</span></li>
+                <li>
+                    <RouterLink to="/caja"> <i class="bi bi-cash-coin"></i><span class="text">Caja</span></RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/contabilidad"> <i class="bi bi-calculator"></i><span class="text">Contabilidad</span></RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/empresa"> <i class="bi bi-buildings"></i><span class="text">Empresa</span></RouterLink>
+                </li>
+<!--  -->
+
+                <li>
+                    <RouterLink to="/about"><i class="bi bi-info-circle"></i><span class="text">Acerca de Nosotros</span></RouterLink> <br>
+                </li>
             </ul>
         </div>
 
-    <RouterView />
+        <RouterView />
 
-</body>
+    </body>
 </div>
 </template>
 
 <style>
-
 .cuerpo {
 
     background-color: red;
@@ -246,5 +265,13 @@ body {
 
 .card p {
     color: #555;
+}
+span.text{
+    color: #ffffff;
+    text-decoration: none;
+
+}
+li{
+    color: #fff;
 }
 </style>
