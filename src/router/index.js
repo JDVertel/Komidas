@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import MenuView from '../components/MenuView.vue'
+
 import aboutView from '../components/AboutView.vue'
 
 import cajaView  from '../components/cajaView.vue'

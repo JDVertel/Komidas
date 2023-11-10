@@ -27,34 +27,11 @@ export default {
 <div class="container">
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+   
+     
     </header>
 
     <body>
-
         <div class="sidebar" v-on:mouseover="openSidebar()" v-on:mouseout="closeSidebar()">
             <ul class="nav">
                 <li>
@@ -86,21 +63,33 @@ export default {
                 <li>
                     <RouterLink to="/empresa"> <i class="bi bi-buildings"></i><span class="text">Empresa</span></RouterLink>
                 </li>
-<!--  -->
+                <!--  -->
 
                 <li>
                     <RouterLink to="/about"><i class="bi bi-info-circle"></i><span class="text">Acerca de Nosotros</span></RouterLink> <br>
                 </li>
             </ul>
         </div>
-
-        <RouterView />
-
+     
+     
     </body>
+    <div class="bodyapp">   <RouterView /></div>
+
 </div>
 </template>
 
 <style>
+.bodyapp {
+    display: flex;
+    margin-left: 1em;
+}
+
+
+
+span.text {
+    text-decoration-line: none;
+}
+
 .cuerpo {
 
     background-color: red;
@@ -110,23 +99,19 @@ export default {
     background-color: green;
 }
 
-html,
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    margin-left: 30px;
     padding: 0;
-
     font-family: "Roboto", sans-serif;
 }
-
-body {
-    display: flex;
+.bodyapp{
+    position:absolute;
+    margin-left: 35px;
 }
-
 .sidebar {
-    width: 60px;
+    width: 80px;
     background-color: #333;
     color: #fff;
     overflow: hidden;
@@ -140,6 +125,7 @@ body {
 
 .sidebar.active {
     width: 200px;
+    overflow: hidden;
 }
 
 .toggle-btn {
@@ -174,48 +160,22 @@ body {
 
 .sidebar.active .text {
     display: inline;
-}
-
-.sidebar.active {
-    width: 200px;
-}
-
-/* Estilos para el navbar */
-
-.navbar .toggle-btn {
-    font-size: 24px;
-    background-color: #33333300;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.navbar-nav li a {
-    display: flex;
-    align-items: center;
     text-decoration: none;
-    color: #e67171;
 }
 
 /* Estilos para el sidebar */
 .sidebar {
-    width: 50px;
+    width: 40px;
     background-color: #333;
-    color: #fff;
     overflow: hidden;
     height: 100%;
-    transition: width 0s;
+    transition: width 0.1s;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
     display: flex;
     flex-direction: column;
-}
-
-.sidebar.active {
-    width: 200px;
 }
 
 /* Estilos para el contenido principal */
@@ -226,6 +186,7 @@ body {
 
 .sidebar.active .navbar .text {
     display: inline;
+    text-decoration: none;
 }
 
 /* Estilos navbar */
@@ -264,14 +225,22 @@ body {
 }
 
 .card p {
-    color: #555;
+    color: #45f322;
 }
-span.text{
-    color: #ffffff;
-    text-decoration: none;
 
+span.text,
+i,
+a {
+    color: #fbff00;
+    text-decoration: none !important;
 }
-li{
-    color: #fff;
-}
+
+@media (max-width: 767px) {
+    .sidebar {
+     
+        float: right;
+      }
+
+ 
+  }
 </style>
